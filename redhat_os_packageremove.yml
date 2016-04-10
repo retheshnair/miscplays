@@ -5,7 +5,7 @@
   connection: "{{ var_connection }}"
   gather_facts: "{{ var_gather_facts }}"
   vars_files: 
-         - var.yml
+         - vars.yml
   tasks:
   - name: Remove Package on Redhat Based System
     when: ansible_os_family == "RedHat"
