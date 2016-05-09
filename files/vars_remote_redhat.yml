@@ -1,0 +1,6 @@
+var_hosts: centos
+var_remote_user: vagrant
+var_sudo: yes
+var_connection: ssh
+var_gather_facts: yes
+var_package: [httpd] 

@@ -1,4 +1,4 @@
---- #PLAYBOOK FOR PACKAGE REMOVAL
+--- #PLAYBOOK FOR USER ADD
 - hosts: "{{ var_hosts }}"
   remote_user: "{{ var_remote_user }}"
   sudo: "{{ var_sudo }}"
@@ -7,10 +7,7 @@
   vars_files: 
          - files/vars_remote_redhat.yml
   tasks:
-  - name: Remove Package on Redhat Based System
-    when: ansible_os_family == "RedHat"
-    yum: name={{ item }} state=absent
-    async: 40
-    poll: 10
-    with_items:
-    - "{{ var_package }}"
+  - name: testing
+    user: name=test1 state=present
+  - name: what is your name
+    user: name=test state=absent

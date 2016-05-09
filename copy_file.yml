@@ -5,7 +5,7 @@
   connection: "{{ var_connection }}"
   gather_facts: "{{ var_gather_facts }}"
   vars_files: 
-         - vars.yml
+         - files/vars_remote_redhat.yml
   tasks:
   - name: Copy /etc/hosts File
     copy: src=/etc/hosts dest=/etc/hosts owner=root group=root mode=644 backup=yes
