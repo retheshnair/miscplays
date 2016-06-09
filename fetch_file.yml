@@ -1,0 +1,11 @@
+--- #PLAYBOOK FOR FETCHING ?etc/hosts
+- hosts: "{{ var_hosts }}"
+  remote_user: "{{ var_remote_user }}"
+  sudo: "{{ var_sudo }}"
+  connection: "{{ var_connection }}"
+  gather_facts: "{{ var_gather_facts }}"
+  vars_files: 
+         - files/vars_remote_redhat.yml
+  tasks:
+  - name: Fetching /etc/hosts File
+    fetch: src=/etc/hosts dest=//home/{{ var_remote_user }}/logs/etc/hosts.{{ ansible_hostname }}  flat=yes chmod=750
