@@ -1,0 +1,6 @@
+- hosts: all
+  user: "{{ var_remote_user }}"
+  sudo: "{{ var_sudo }}"
+  connection: "{{ var_connection }}"
+  roles:
+     - { role: ansible-role-lynis, tags: [lynis] }
